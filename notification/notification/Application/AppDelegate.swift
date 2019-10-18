@@ -18,17 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /// Request authorization for notification
         notificationManager.requestAuthorization(withOptions: [.alert, .badge, .sound])
         
-        /// Get authorization status
-        notificationManager.getNotificationStatus { (status) in
-            switch status {
-                case .authorized: print("Authorized")
-                case .denied: print("Denied")
-                case .notDetermined: print("Not dertermied")
-                case .provisional: print("Provisional")
-                @unknown default: print("Unknown default")
-            }
-        }
-        
         return true
     }
 
