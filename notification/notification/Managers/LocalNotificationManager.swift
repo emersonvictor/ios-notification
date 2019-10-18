@@ -10,10 +10,12 @@ import Foundation
 import UserNotifications
 import CoreLocation
 
-class LocalNotificationManager: NSObject, UNUserNotificationCenterDelegate {
+class LocalNotificationManager: NSObject {
     
-    private let notificationCenter = UNUserNotificationCenter.current()
+    // MARK: - Variables
+    let notificationCenter = UNUserNotificationCenter.current()
     
+    // MARK: - Get notifcation status
     private func getNotificationStatus(completion: @escaping (_ status: UNAuthorizationStatus) -> Void){
         self.notificationCenter.getNotificationSettings { (setting) in
             completion(setting.authorizationStatus)
@@ -52,8 +54,13 @@ extension LocalNotificationManager {
         }
     }
     
+    // MARK: - Add custom actions
+    func addCustomOptions(_ options: Set<UNNotificationCategory>) {
+        self.notificationCenter.setNotificationCategories(options)
+    }
+    
     // MARK: - Creating notifications
-    func crateNotificationContent(withTitle title: String, subtitle: String, body: String, badge: Int) -> UNMutableNotificationContent {
+    func crateNotificationContent(title: String, subtitle: String, body: String, badge: Int, categoryIdentifier: String) -> UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
         
         /// Set notification content
@@ -62,6 +69,7 @@ extension LocalNotificationManager {
         content.body = body
         content.badge = badge as NSNumber
         content.sound = .default
+        content.categoryIdentifier = categoryIdentifier
         
         return content
     }
@@ -96,5 +104,29 @@ extension LocalNotificationManager {
         /// Request notification
         self.createNotificationRequest(identifier: identifier, content: content, trigger: trigger)
     
+    }
+}
+
+// MARK: - User notification delegate
+extension LocalNotificationManager: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+         didReceive response: UNNotificationResponse,
+         withCompletionHandler completionHandler: @escaping () -> Void) {
+
+      // Determine the user action
+      switch response.actionIdentifier {
+      case UNNotificationDismissActionIdentifier:
+        print("Dismiss Action")
+      case UNNotificationDefaultActionIdentifier:
+        print("Default")
+      case "Snooze":
+        print("Snooze")
+      case "Delete":
+        print("Delete")
+      default:
+        print("Unknown action")
+      }
+        
+      completionHandler()
     }
 }
