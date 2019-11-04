@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D986BD5F235744B900997744 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986BD5E235744B900997744 /* LocalNotificationManager.swift */; };
+		D9D91EA423705A7900D0DADB /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D91EA323705A7900D0DADB /* PushNotificationManager.swift */; };
+		D9D91EA823705C5500D0DADB /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D91EA723705C5500D0DADB /* NotificationManager.swift */; };
 		D9F08893235637BA0033D7D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F08892235637BA0033D7D3 /* AppDelegate.swift */; };
 		D9F08895235637BA0033D7D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F08894235637BA0033D7D3 /* SceneDelegate.swift */; };
 		D9F08897235637BA0033D7D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F08896235637BA0033D7D3 /* ViewController.swift */; };
@@ -18,6 +20,9 @@
 
 /* Begin PBXFileReference section */
 		D986BD5E235744B900997744 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		D9D31A59236B16D30020E880 /* notification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = notification.entitlements; sourceTree = "<group>"; };
+		D9D91EA323705A7900D0DADB /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
+		D9D91EA723705C5500D0DADB /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		D9F0888F235637BA0033D7D3 /* notification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F08892235637BA0033D7D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F08894235637BA0033D7D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,12 +72,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		D986BD5D2357449000997744 /* Managers */ = {
+		D986BD5D2357449000997744 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
 				D986BD5E235744B900997744 /* LocalNotificationManager.swift */,
+				D9D91EA723705C5500D0DADB /* NotificationManager.swift */,
+				D9D91EA323705A7900D0DADB /* PushNotificationManager.swift */,
 			);
-			path = Managers;
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		D9F08886235637BA0033D7D3 = {
@@ -94,10 +101,11 @@
 		D9F08891235637BA0033D7D3 /* notification */ = {
 			isa = PBXGroup;
 			children = (
+				D9D31A59236B16D30020E880 /* notification.entitlements */,
 				D986BD5B2357444C00997744 /* Application */,
 				D986BD5C2357448700997744 /* Controllers */,
 				D986BD5A2357444300997744 /* Interface */,
-				D986BD5D2357449000997744 /* Managers */,
+				D986BD5D2357449000997744 /* Notification */,
 			);
 			path = notification;
 			sourceTree = "<group>";
@@ -173,10 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9D91EA423705A7900D0DADB /* PushNotificationManager.swift in Sources */,
 				D9F08897235637BA0033D7D3 /* ViewController.swift in Sources */,
 				D9F08893235637BA0033D7D3 /* AppDelegate.swift in Sources */,
 				D986BD5F235744B900997744 /* LocalNotificationManager.swift in Sources */,
 				D9F08895235637BA0033D7D3 /* SceneDelegate.swift in Sources */,
+				D9D91EA823705C5500D0DADB /* NotificationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +330,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = notification/notification.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XP4ML92KUD;
 				INFOPLIST_FILE = notification/Application/Info.plist;
@@ -338,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = notification/notification.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XP4ML92KUD;
 				INFOPLIST_FILE = notification/Application/Info.plist;
