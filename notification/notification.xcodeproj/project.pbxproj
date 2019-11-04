@@ -20,7 +20,6 @@
 
 /* Begin PBXFileReference section */
 		D986BD5E235744B900997744 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
-		D9D31A59236B16D30020E880 /* notification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = notification.entitlements; sourceTree = "<group>"; };
 		D9D91EA323705A7900D0DADB /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		D9D91EA723705C5500D0DADB /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		D9F0888F235637BA0033D7D3 /* notification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notification.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +100,6 @@
 		D9F08891235637BA0033D7D3 /* notification */ = {
 			isa = PBXGroup;
 			children = (
-				D9D31A59236B16D30020E880 /* notification.entitlements */,
 				D986BD5B2357444C00997744 /* Application */,
 				D986BD5C2357448700997744 /* Controllers */,
 				D986BD5A2357444300997744 /* Interface */,
