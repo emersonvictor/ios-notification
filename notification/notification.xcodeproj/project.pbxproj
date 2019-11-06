@@ -10,6 +10,7 @@
 		D986BD5F235744B900997744 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986BD5E235744B900997744 /* LocalNotificationManager.swift */; };
 		D9D91EA423705A7900D0DADB /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D91EA323705A7900D0DADB /* PushNotificationManager.swift */; };
 		D9D91EA823705C5500D0DADB /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D91EA723705C5500D0DADB /* NotificationManager.swift */; };
+		D9D91EAA23706AA100D0DADB /* NotificationFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D91EA923706AA100D0DADB /* NotificationFacade.swift */; };
 		D9F08893235637BA0033D7D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F08892235637BA0033D7D3 /* AppDelegate.swift */; };
 		D9F08895235637BA0033D7D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F08894235637BA0033D7D3 /* SceneDelegate.swift */; };
 		D9F08897235637BA0033D7D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F08896235637BA0033D7D3 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 		D986BD5E235744B900997744 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		D9D91EA323705A7900D0DADB /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		D9D91EA723705C5500D0DADB /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		D9D91EA923706AA100D0DADB /* NotificationFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFacade.swift; sourceTree = "<group>"; };
 		D9F0888F235637BA0033D7D3 /* notification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F08892235637BA0033D7D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F08894235637BA0033D7D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				D986BD5E235744B900997744 /* LocalNotificationManager.swift */,
 				D9D91EA723705C5500D0DADB /* NotificationManager.swift */,
 				D9D91EA323705A7900D0DADB /* PushNotificationManager.swift */,
+				D9D91EA923706AA100D0DADB /* NotificationFacade.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				D986BD5F235744B900997744 /* LocalNotificationManager.swift in Sources */,
 				D9F08895235637BA0033D7D3 /* SceneDelegate.swift in Sources */,
 				D9D91EA823705C5500D0DADB /* NotificationManager.swift in Sources */,
+				D9D91EAA23706AA100D0DADB /* NotificationFacade.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

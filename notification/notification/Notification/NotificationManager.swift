@@ -21,17 +21,9 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
     }
     
     // MARK: - Notification authorization
-    func requestAuthorization(withOptions options: UNAuthorizationOptions) {
+    func requestAuthorization(withOptions options: UNAuthorizationOptions, completion: @escaping (_ status: Bool, _ error: Error) -> Void) {
         self.notificationCenter.requestAuthorization(options: options) { (didAllow, error) in
-            /// User permission
-            if !didAllow {
-                print("User didn't allow notification")
-            }
-            
-            /// Error in authorization request
-            if let requestError = error {
-                print("Error: \(requestError)")
-            }
+            completion(didAllow, error)
         }
     }
     

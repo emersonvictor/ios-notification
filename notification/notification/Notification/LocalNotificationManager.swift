@@ -10,7 +10,10 @@ import Foundation
 import UserNotifications
 import CoreLocation
 
-final class LocalNotificationManager: NotificationManager {
+final class LocalNotificationManager {
+    // MARK: - Notification manager
+    let notificationManager = NotificationManager()
+    
     // MARK: - Creating notifications
     func crateNotificationContent(title: String, subtitle: String, body: String, badge: Int, categoryIdentifier: String) -> UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
@@ -27,11 +30,11 @@ final class LocalNotificationManager: NotificationManager {
     }
     
     // MARK: - Create notification request
-    func createNotificationRequest(identifier: String, content: UNMutableNotificationContent, trigger: UNNotificationTrigger) {
-        self.getNotificationStatus { (status) in
+    private func createNotificationRequest(identifier: String, content: UNMutableNotificationContent, trigger: UNNotificationTrigger) {
+        self.notificationManager.getNotificationStatus { (status) in
             if status == .authorized {
                 let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-                self.notificationCenter.add(request) { (error) in
+                self.notificationManager.notificationCenter.add(request) { (error) in
                     if let error = error {
                         print("Handle error: \(error)")
                     }
@@ -42,7 +45,7 @@ final class LocalNotificationManager: NotificationManager {
     
     // MARK: - Add custom actions
     func addCustomOptions(_ options: Set<UNNotificationCategory>) {
-        self.notificationCenter.setNotificationCategories(options)
+        self.notificationManager.notificationCenter.setNotificationCategories(options)
     }
     
     
@@ -75,7 +78,6 @@ final class LocalNotificationManager: NotificationManager {
         
         /// Request notification
         self.createNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        
     }
 }
 
